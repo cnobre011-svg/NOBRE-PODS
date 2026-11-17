@@ -82,7 +82,7 @@ const Ico=({n,c='w-6 h-6'})=>{
 
 const Img=({p,className=''})=>p.img
  ?<img src={p.img} alt={p.name} className={'object-cover '+className}/>
- :<div className={'bg-gray-100 flex items-center justify-center text-3xl '+className}>🍷</div>;
+ :<div className={'bg-gray-100 flex items-center justify-center '+className}></div>;
 
 const Price=({p})=>(<div className="flex items-center flex-wrap gap-x-2">
  <span className={'text-lg font-semibold '+(disc(p)?'text-green-600':'text-gray-800')}>{brl(p.price)}</span>
@@ -371,8 +371,7 @@ function App(){
  if(tab==='admin')return <Admin db={db} P={rawP} C={rawC} nOrders={nOrders} ords={ordList} st={st} canEdit={canEdit} ready={ready} exit={()=>{history.pushState(null,'','/');setTab('home')}}/>;
  return(<div className="min-h-screen pb-28">
     <header className="sticky top-0 z-30 bg-white shadow-sm px-4 py-3 flex items-center gap-3 relative" style={{top:0}}>
-   <button onClick={()=>go('home')} className="w-12 h-12 rounded-lg bg-gray-900 text-white text-2xl flex items-center justify-center shrink-0">🍷</button>
-   {sOpen?<input autoFocus value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar produtos" className="flex-1 min-w-0 h-12 border border-gray-200 rounded-xl px-3"/>
+      {sOpen?<input autoFocus value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar produtos" className="flex-1 min-w-0 h-12 border border-gray-200 rounded-xl px-3"/>
    :<button onClick={()=>setMenu(!menu)} className="h-12 px-4 border border-gray-200 rounded-xl flex items-center gap-2 font-semibold text-gray-700 bg-white"><span>{label}</span><Ico n="down" c="w-4 h-4"/></button>}
    <div className="flex-1"/>
    <button onClick={()=>{setSOpen(!sOpen);setQ('')}} className="w-12 h-12 border border-gray-200 rounded-xl flex items-center justify-center bg-white"><Ico n={sOpen?'x':'search'}/></button>
