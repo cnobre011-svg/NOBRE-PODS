@@ -1,0 +1,13 @@
+{
+  "name": "loja-adega",
+  "version": "2.0.0",
+  "description": "Loja online mobile-first (Vercel + Supabase) com painel administrativo, 2FA e pedidos por WhatsApp.",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node dev.js",
+    "reset-admin": "node dev.js --reset-admin",
+    "test": "node tests/run.js"
+  },
+  "license": "MIT"
+}
