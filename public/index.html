@@ -275,7 +275,7 @@ function Admin({db,P,C,nOrders,ords,canEdit,ready,exit,st}){
  </div></Shell>}
 
 const WA_DEFAULT='';
-const FINAL=false; // true na versão final: esconde o link da área do proprietário
+const FINAL=true; // true na versão final: esconde o link da área do proprietário
 const EC={name:'',phone:'',cep:'',number:'',street:'',comp:'',ref:'',bairro:'',city:'',pay:'Pix',troco:''};
 const fmtCep=v=>{const d=String(v||'').replace(/\D/g,'').slice(0,8);return d.length>5?d.slice(0,5)+'-'+d.slice(5):d};
 function CustFields({cust,setCust,zones,auto}){
